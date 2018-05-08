@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		The Seven Art Show
+	</title>
+
+
+	<style type="text/css">
+		.container1{
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:20px;
+			width:960px;
+			height:2800px;
+			background-color:#ffffff;
+			z-index:1;
+		}
+
+		p{
+			font-family:arial,Helvetica,sans serif;
+			font-size:10pt;
+			line-height:15pt;
+		}
+
+		.top{
+			position:absolute;
+			left:30px;
+			top:20px;
+			width:900px;
+			height:20px;
+			z-index:2;
+		}
+
+		.big_title{
+			position:absolute;
+			left:240px;
+			top:260px;
+			width:960px;
+			height:50px;
+			z-index:3;
+		}
+
+		.navigation{
+			position:absolute;
+			left:30px;
+			top:680px;
+			width:900px;
+			height:111px;
+			z-index:2;
+		}
+
+		.middle{
+			position:absolute;
+			left:-3px;
+			top:900px;
+			width:960px;
+			
+			z-index:3;
+		}
+
+		.picrec{
+			position:absolute;
+			left:0px;
+			top:903px;
+			width:960px;
+			height:1500px;
+			z-index:3;
+		}
+
+		.contextbox{
+			position:absolute;
+			left:0px;
+			top:1403px;
+			width:960px;
+			height:350px;
+			background-image:url(Image/black.jpg);
+			background-repeat:repeat;
+			z-index:1;
+		}
+
+		.bottom{
+			position:absolute;
+			left:-3px;
+			top:2530px;
+			width:960px;
+			height:400px;
+			z-index:4;
+		}
+
+
+		/*Big_Slide样式*/
+		#Big_Slide_box{
+			width:100%; 
+			height: 500px;
+			overflow:hidden;
+		}
+		#Big_Slide{
+			width:960px;
+			height: 500px;
+			position: relative;
+			margin:0 auto;
+		}
+		#Big_Slide ul{
+			margin: 0;
+		}
+		#Big_Slide ul li{
+			width:960px; 
+			/*height:335px;*/
+			position: absolute;
+		}
+		#Big_Slide ul li img{
+			width: 960px;
+			height: 500px;
+		}
+		#Big_Slide_Last,#Big_Slide_Next{
+			width:46px; 
+			height:131px;
+			color:#333; 
+			font-size:18px;
+			position: absolute;
+			z-index:9999; 
+			cursor:pointer;
+			opacity:0.5;
+			display: block;
+			background: #fff;
+		}
+		#Big_Slide_Last:hover,
+		#Big_Slide_Next:hover{
+			opacity:1;
+		}
+		#Big_Slide_Last{
+			left:0px; 
+			/*background:url(./Image/lastIco.png) no-repeat center top;*/
+		}
+		#Big_Slide_Next{
+			right:0px;
+			/*background:url(./Image/nextIco.png) no-repeat center top;*/
+		}
+		#Big_Slide_Tab{
+			position: absolute;
+			bottom:12px;
+			height:1px;
+			margin:0 auto; 
+			width:240px;
+			z-index: 99999;
+		}
+		#Big_Slide_Tab a{
+			display:block;
+			background:#000;
+			float:left; 
+			height:1px;
+			overflow:hidden; 
+			z-index:9999; 
+		}
+		#Big_Slide_Tab .TabOn{ 
+			background:#fff;
+		} 
+		#Big_Slide .prev{
+			position:absolute;
+			width:960px; 
+			height:335px; 
+			background:#fff;
+			top:0px; 
+			z-index:99; 
+			opacity:0.95;
+		}
+
+
+		
+
+
+
+
+
+
+	</style>
+	<script src="jquery-1.9.1.min.js"></script>
+</head>
+
+<body bgcolor="#cccccc">
+
+	<div class="container1">
+
+		<div class="top">
+			<table width="900" border="0">
+				<tr>
+					<td width="500">
+						<img src="Image/The_Seven_small.png" width="107" hight="16" style="border-style:none" />
+					</td>
+					<td width="50">
+						Help
+					</td>
+					<td width="100">
+						Sign Up/Log in
+					</td>
+					<td width="50">
+						Language
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="big_title">
+			<table  border="0">
+				<tr>
+					<td>
+						<img src="Image/The_Seven_big.png" width="500" hight="214" style="border-style:none" />
+					</tr>
+				</table>
+			</div>
+
+			<div class="navigation" id="navigation" name="navigation"  align="center">
+				<table width="900" align="center" cellpadding="6" cellspacing="0" border="0">
+					<tr align="center">
+
+						<td>
+							<a href="index.htm"><img src="Image/Home.png" width="110" hight="111" style="border-style:none" /></a>
+						</td>
+						<td>
+							<a href="general.htm#navigation">
+								<img src="Image/General.png" width="110" hight="111" style="border-style:none" />
+							</a>
+						</td>
+
+						<td>
+							<a href="schedule.htm#navigation">
+								<img src="Image/ScheduleF.png" width="110" hight="111" style="border-style:none" />
+							</a>
+						</td>
+
+						<td>
+							<img src="Image/Logo.png" width="139" hight="139" style="border-style:none" />
+						</td>
+
+						<td>
+							<a href="institute.htm#navigation">
+								<img src="Image/Institute.png" width="110" hight="111" style="border-style:none" />
+							</a>
+						</td>
+
+						<td>
+							<a href="support.htm#navigation">
+								<img src="Image/Support.png" width="110" hight="111" style="border-style:none" />
+							</a>
+						</td>
+
+						<td>
+							<a href="about.htm#navigation">
+								<img src="Image/About.png" width="110" hight="111" style="border-style:none" />
+							</a>
+						</td>
+
+					</tr>
+				</table>
+			</div>
+
+
+			<div class="middle">
+				<table width="960" border="0">
+					<tr>
+						<td colspan="4" width="960">
+
+							<div id="Big_Slide_box">
+
+								<div id="Big_Slide">
+
+									<ul>
+
+										<li style=" background:#E81216;" id="Big_Slide_0"><img src="Image/schedule1.png"></li>
+
+										<li style=" background:#000000;" id="Big_Slide_1"><img src="Image/schedule2.png"></li>
+
+										<li style=" background:#4144D7;" id="Big_Slide_2"><img src="Image/schedule3.png"></li>
+
+										<li style=" background:#E81216;" id="Big_Slide_0"><img src="Image/schedule4.png"></li>
+
+										<li style=" background:#000000;" id="Big_Slide_1"><img src="Image/schedule5.png"></li>
+
+										<li style=" background:#4144D7;" id="Big_Slide_2"><img src="Image/schedule6.png"></li>
+
+										<li style=" background:#E81216;" id="Big_Slide_0"><img src="Image/schedule7.png"></li>
+
+										<li style=" background:#000000;" id="Big_Slide_1"><img src="Image/schedule8.png"></li>
+
+										<li style=" background:#4144D7;" id="Big_Slide_2"><img src="Image/schedule9.png"></li>
+
+									</ul>
+
+									<a id="Big_Slide_Last"></a>
+
+									<a id="Big_Slide_Next"></a>
+
+									<div id="Big_Slide_Tab"></div>
+
+									<div id="prevL" class="prev" ></div>
+
+									<div id="prevR" class="prev" ></div>
+
+								</div>
+
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="4" height="30">
+						</tr>
+
+						<tr>
+							<td width="30">
+							</td>
+
+							<td width="450">
+								<img src="Image/Hours.png" width="70" hight="18" style="border-style:none" />
+							</td>
+
+							<td width="450">
+								<img src="Image/Accomodation.png" width="170" hight="19" style="border-style:none" />
+							</td>
+
+							<td  width="30">
+							</td>
+						</tr>
+
+						<tr>
+							<td width="30">
+							</td>
+
+							<td width="450">
+								<p style="color:white;">
+									Monday, May 29: 12-7pm<br>
+									Tuesday, May 30: 12-8pm<br>
+									Wednesday, May 31: VIP Preview (invitation only)<br>
+									Thursday, June 1: 12-8pm<br>
+									Friday, June 2: 12-8pm<br>
+									Saturday, June 3: 12-7pm<br>
+									Sunday, June 4: 12-6pm
+								</p>
+							</td>
+
+							<td width="450" align="top">
+								<p style="color:white;">
+									Book discounted hotel accommodations<br> 
+									from our partner hotels today.
+								</p>
+							</td>
+
+							<td width="30">
+							</td>
+						</tr>
+
+						<tr>
+							<td width="30">
+							</td>
+
+							<td width="450">
+								<img src="Image/Location.png" width="101" hight="18" style="border-style:none" />
+							</td>
+
+							<td width="450">
+								<img src="Image/Direction.png" width="108" hight="18" style="border-style:none" />
+							</td>
+
+							<td  width="30">
+							</td>
+						</tr>
+
+						<tr>
+							<td width="30">
+							</td>
+
+							<td width="450" height="10">
+								<p style="color:white;">
+									755 12th Avenue at 55th Street
+								</p>
+							</td>
+
+							<td width="450" height="10">
+								<p style="color:white;">
+									The Armory Show is easily accessible<br> 
+									by car and public transportation
+								</p>
+							</td>
+
+							<td width="30">
+							</td>
+						</tr>
+
+
+						<tr>
+							<td colspan="4" height="50">
+							</tr>
+
+
+
+
+
+
+							<tr>
+								<td rowspan="4" height="400" style="background-color: #eaeaea">
+
+								</td>
+
+								<td  colspan="2" width="900" height="60">
+									<img src="Image/Latest_News.png" width="147" hight="18" style="border-style:none" />
+								</td>
+
+								<td rowspan="4" height="200" style="background-color: #eaeaea">
+
+								</td>
+							</tr>
+
+							<tr>
+								<td width="200" height="400">
+									<img src="Image/A.png" width="337" hight="202" style="border-style:none" />
+								</td>
+
+								<td width="420" height="202">
+									<img src="Image/A.png" width="337" hight="202" style="border-style:none" />
+								</td>
+							</tr>
+
+							<tr>
+								<td width="420" height="1">
+									<p style="font-family:Tahoma-bold;">
+										2017 EXHIBITING GALLERY ANNOUNCED
+									</p>
+								</td>
+
+								<td width="420" height="1">
+									<p style="font-family:Tahoma-bold;">
+										THE ARMORY SHOW ANNOUNCES THEME, PARTICIPATING ARTISTS AND GALLERIES IN FOCUS 2017
+									</p>
+								</td>
+							</tr>
+
+							<tr>
+								<td width="420" height="150">
+									<p>
+										With a premier selection of new exhibitors, ambitious presentations and a redesigned floor plan, The Seven's 2017 exhibition list is the strongest in years, A more spacious floor plan, designed by architectural firm Bade Stageberg Cox, features wider aisles, larger booths and expanded public loungs. In an outstanding display of quality and curatorial precision, over 70 galleries will present solo-artist and dual-artist projects. Via Seven
+									</p>
+								</td>
+
+								<td width="420" height="150">
+									<p>
+										What is to be done?, currently by Jarrett Gregory(Los Angeles County Museum of Art), brings together 12 artists from 10 countries around the idea of social and political awareness during a time of uncertainty. This section offers in-depth presentation by artists who employ various method of engagement to probe the relationship between creation and participation. 
+
+									</p>
+								</td>
+							</tr>
+
+
+						</table>
+					</div>
+
+					<div class="contextbox">
+						<table>
+							<tr>
+								<td colspan="4" width="960" hight="270" >
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="picrec">
+
+						<img src="Image/PicRectanguler.png" width="960" hight="500" style="border-style:none" />
+
+					</div>
+
+
+
+					<div class="bottom">
+						<table>
+							<tr>
+								<td>
+									<img src="Image/Bottom_part.png" width="960" hight="267" style="border-style:none" />
+
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+<script type="text/javascript">
+	$(function(){
+		var Big_Slide_boxWidth=$("#Big_Slide").width();//获取幻灯片外部div宽度
+		var Big_Slide_boxHeight=$("#Big_Slide").height();//获取幻灯片外部div高度
+		var Big_Slide_LiWidth=$("#Big_Slide").children("ul").children("li").eq(0).width();//获取幻灯片Li的宽度
+		var Big_Slide_liNubr=$("#Big_Slide").find('li').length;//获取幻灯片Li的数量
+		var Big_Slide_Speed=4000;//滚动速度
+		var Big_Slide_Tab_Contne="";//初始化tab按钮
+		var Big_Slide_Last_NextHeight=$("#Big_Slide_Last").height();//获取按钮高度
+		//tab 条宽度
+		var Big_Slide_Tab_AWidth=(1/Big_Slide_liNubr)*100;
+		var Big_Slide_TabWidth=$("#Big_Slide_Tab").width();//tab的宽度
+		var Big_SlideWidth=$("#Big_Slide").width();//Big_Slide的宽度
+		$("#Big_Slide_Tab").css("left",(Big_SlideWidth-Big_Slide_TabWidth)*0.5);//Big_Slide_Tab定位
+		$("#Big_Slide_Last").css("top",(Big_Slide_boxHeight-Big_Slide_Last_NextHeight)*0.5);
+		$("#Big_Slide_Next").css("top",(Big_Slide_boxHeight-Big_Slide_Last_NextHeight)*0.5);
+		$("#prevL").css("left",-Big_Slide_LiWidth);
+		$("#prevR").css("right",-Big_Slide_LiWidth);
+		
+		for(var i=0;i<parseInt(Big_Slide_liNubr);i++){
+			$("#Big_Slide").children("ul").children("li").eq(i).css("left",(i-1)*Big_Slide_LiWidth);//初始化Li位置
+			
+			if(i==1){
+				Big_Slide_Tab_Contne=Big_Slide_Tab_Contne+"<a class='"+"TabOn' id='"+"TabOn"+i+"' style='width:"+Big_Slide_Tab_AWidth+"%'></a>";
+			}else{
+					Big_Slide_Tab_Contne=Big_Slide_Tab_Contne+"<a id='TabOn"+i+"' style='width:"+Big_Slide_Tab_AWidth+"%'></a>";//生成tab按钮
+				}
+			}
+		$("#Big_Slide_Tab").html(Big_Slide_Tab_Contne);//写入tab按钮
+		
+		var Slide_Run = setInterval(Slide_Next,Big_Slide_Speed)//设置滚动器
+		
+		function Slide_Next(){
+			for(var k=0;k<parseInt(Big_Slide_liNubr);k++){
+				if(parseInt($("#Big_Slide").children("ul").children("li").eq(k).css("left"))==-Big_Slide_LiWidth)//判断LI是否有位移到0，防止同时多次点击出错
+				{
+					
+					var Big_Slide_liSeat=0;//位置参数归零
+					for(var j=0;j<parseInt(Big_Slide_liNubr);j++){
+						if(parseInt($("#Big_Slide").children("ul").children("li").eq(j).css("left"))==-Big_Slide_LiWidth){//判断是否第一个
+							
+							$("#Big_Slide").children("ul").children("li").eq(j).css("left",Big_Slide_LiWidth*(Big_Slide_liNubr-2));//第一个回到最后一个
+
+						}else{
+
+							Big_Slide_liSeat=parseInt($("#Big_Slide").children("ul").children("li").eq(j).css("left"))-Big_Slide_LiWidth;//获取位移位置
+							$("#Big_Slide").children("ul").children("li").eq(j).animate({left:Big_Slide_liSeat},"slow");//进行位移动画
+
+						}
+					}
+
+				}
+			}
+		}
+		
+		function Slide_Last(){
+			for(var k=0;k<parseInt(Big_Slide_liNubr);k++){
+				if(parseInt($("#Big_Slide").children("ul").children("li").eq(k).css("left"))==0)//判断LI是否有位移到0，防止同时多次点击出错
+				{
+					
+					var Big_Slide_liSeat=0;//位置参数归零
+					for(var j=0;j<parseInt(Big_Slide_liNubr);j++){
+						if(parseInt($("#Big_Slide").children("ul").children("li").eq(j).css("left"))==Big_Slide_LiWidth*(Big_Slide_liNubr-2)){//判断是否第一个
+							
+							$("#Big_Slide").children("ul").children("li").eq(j).css("left",-Big_Slide_LiWidth);//第一个回到最后一个
+							
+						}else{
+
+							Big_Slide_liSeat=parseInt($("#Big_Slide").children("ul").children("li").eq(j).css("left"))+Big_Slide_LiWidth;//获取位移位置
+							$("#Big_Slide").children("ul").children("li").eq(j).animate({left:Big_Slide_liSeat},"slow");//进行位移动画
+							
+						}
+					}
+
+				}
+			}
+		}
+		
+		setInterval(function(){
+			for(var n=0;n<parseInt(Big_Slide_liNubr);n++){
+				if(parseInt($("#Big_Slide").children("ul").children("li").eq(n).css("left"))==0){
+					if((n-1)<0){
+						$("#TabOn"+(Big_Slide_liNubr-1)).removeClass("TabOn");
+						$("#TabOn"+(n+1)).removeClass("TabOn");
+						$("#TabOn"+n).addClass("TabOn");
+					}else {
+						$("#TabOn0").removeClass("TabOn");
+						$("#TabOn"+(n-1)).removeClass("TabOn");
+						$("#TabOn"+(n+1)).removeClass("TabOn");
+						$("#TabOn"+n).addClass("TabOn");
+					}
+				}
+			}
+		},1)
+		
+		$("#Big_Slide_Next").click(Slide_Next);//下一张按钮
+		$("#Big_Slide_Last").click(Slide_Last);//上一张按钮
+		$("#Big_Slide_box").mouseenter(function(){clearInterval(Slide_Run)});//鼠标在幻灯片上，停止滚动
+		$("#Big_Slide_box").mouseleave(function(){Slide_Run = setInterval(Slide_Next,Big_Slide_Speed)})//鼠标不在幻灯哦上，开始滚动
+		
+	})	
+</script>
+</body>
+</html>

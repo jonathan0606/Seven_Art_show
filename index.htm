@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		The Seven Art Show
+	</title>
+
+
+	<style type="text/css">
+		.container1{
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:20px;
+			width:960px;
+			height:2270px;
+			background-color:#ffffff;
+			z-index:1;
+		}
+
+		p{
+			font-family:arial,Helvetica,sans serif;
+			font-size:10pt;
+			line-height:15pt;
+		}
+
+		.top{
+			position:relative;
+			margin:auto;
+			padding-top:20px;
+			width:900px;
+			height:20px;
+			z-index:2;
+		}
+
+		.big_title{
+			position:relative;
+			margin: 0 auto;
+			width:960px;
+			height:50px;
+			z-index:3;
+		}
+		.big_title table{
+			width: 960px;
+			text-align: center;
+			margin: auto;
+		}
+
+		.navigation{
+			position:absolute;
+			left:-6px;
+			top:680px;
+			width:900px;
+			height:111px;
+			z-index:2;
+		}
+
+		.middle{
+			position:absolute;
+			left:190px;
+			top:919px;
+			width:598px;
+			height:307px;
+			z-index:2;
+		}
+		.first_text{
+			position:absolute;
+			left:190px;
+			top:913px;
+			width:598px;
+			height:307px;
+			z-index:2;
+		}
+
+		.bottomtext{
+			position:absolute;
+			left:30px;
+			top:1500px;
+			width:900px;
+			height:500px;
+			z-index:2;
+		}
+
+
+		.bottom{
+			position:absolute;
+			left:-3px;
+			top:2000px;
+			width:960px;
+			height:400px;
+			z-index:4;
+		}
+		td{
+			vertical-align:top;
+		}
+
+		.main{
+			margin-top: 120px;
+			font-size: 120px;
+			font-family: Herculanum;
+			position: relative;
+		}
+		.main .m-no{
+			position: absolute;
+			top: 45%;
+			left: 2%;
+		}
+
+		.main .m-no span {
+			display: inline-block;
+			-webkit-animation: blurFadeInOut 6s ease-in 1s forwards ;
+			-moz-animation: blurFadeInOut 6s ease-in 1s forwards ;
+			-ms-animation: blurFadeInOut 6s ease-in 1s forwards ;
+			animation: blurFadeInOut 6s ease-in 1s forwards;
+			text-shadow: 0px 0px 1px #fff;
+			opacity: 0;
+		}
+		.main p{
+			-webkit-animation: blurFadeIn 3s ease-in 8s backwards ;
+			-moz-animation: blurFadeIn 3s ease-in 8s backwards ;
+			-ms-animation: blurFadeIn 3s ease-in 8s backwards ;
+			animation: blurFadeIn 3s ease-in 8s backwards;
+			text-shadow: 0px 0px 1px #fff;
+		}
+		.main .m-no span:nth-child(2) {
+			-webkit-animation-delay: 2s;
+			-moz-animation-delay: 2s;
+			-ms-animation-delay: 2s;
+			animation-delay: 2s;
+			-webkit-animation-duration:5s;
+			animation-duration:5s;
+		}
+		.main .m-no span:nth-child(3) {
+			-webkit-animation-delay: 3s;
+			-moz-animation-delay: 3s;
+			-ms-animation-delay: 3s;
+			animation-delay: 3s;
+			-webkit-animation-duration:4s;
+			animation-duration:4s;
+		}
+
+		.main .m-no span:nth-child(3) {
+			-webkit-animation-delay: 4s;
+			-moz-animation-delay: 4s;
+			-ms-animation-delay: 4s;
+			animation-delay: 4s;
+			-webkit-animation-duration:3s;
+			animation-duration:3s;
+		}
+
+		.main .m-no span:nth-child(4) {
+			-webkit-animation-delay: 5s;
+			-moz-animation-delay: 5s;
+			-ms-animation-delay: 5s;
+			animation-delay: 5s;
+			-webkit-animation-duration:2s;
+			animation-duration:2s;
+		}
+
+		/**/
+		@-webkit-keyframes blurFadeInOut{
+			0%{
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-webkit-transform: scale(1.3);
+			}
+			20%,75%{
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-webkit-transform: scale(1);
+			}
+			100%{
+				opacity: 0;
+				text-shadow: 0px 0px 50px #fff;
+				-webkit-transform: scale(0);
+			}
+		}
+		@-webkit-keyframes blurFadeIn{
+			0%{
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-webkit-transform: scale(1.3);
+			}
+			50%{
+				opacity: 0.5;
+				text-shadow: 0px 0px 10px #fff;
+				-webkit-transform: scale(1.1);
+			}
+			100%{
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-webkit-transform: scale(1);
+			}
+		}
+		/**/
+		@-moz-keyframes blurFadeInOut{
+			0%{
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-moz-transform: scale(1.3);
+			}
+			20%,75%{
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-moz-transform: scale(1);
+			}
+			100%{
+				opacity: 0;
+				text-shadow: 0px 0px 50px #fff;
+				-moz-transform: scale(0);
+			}
+		}
+		@-moz-keyframes blurFadeIn{
+			0%{
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-moz-transform: scale(1.3);
+			}
+			100%{
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-moz-transform: scale(1);
+			}
+		}
+
+		/**/
+		@keyframes blurFadeInOut{
+			0%{
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				transform: scale(1.3);
+			}
+			20%,75%{
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				transform: scale(1);
+			}
+			100%{
+				opacity: 0;
+				text-shadow: 0px 0px 50px #fff;
+				transform: scale(0);
+			}
+		}
+		@keyframes blurFadeIn{
+			0%{
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				transform: scale(1.3);
+			}
+			50%{
+				opacity: 0.5;
+				text-shadow: 0px 0px 10px #fff;
+				transform: scale(1.1);
+			}
+			100%{
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				transform: scale(1);
+			}
+		}       
+
+	</style>
+	<script src="http://www.jq22.com/jquery/jquery-1.9.1.js"></script>
+</head>
+
+<body bgcolor="#cccccc">
+
+	<div class="container1">
+
+		<div class="top">
+			<table width="900" border="0">
+				<tr>
+					<td width="500">
+						<img src="Image/The_Seven_small.png" width="107" hight="16" style="border-style:none" />
+					</td>
+					<td width="50">
+						Help
+					</td>
+					<td width="100">
+						Sign Up/Log in
+					</td>
+					<td width="50">
+						Language
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="big_title">
+			<table>
+				<tr>
+					<td>
+						<!-- <img src="Image/The_Seven_big.png" width="500" hight="214" style="border-style:none" /> -->
+						<div class="main">
+							<div class="m-no">
+								<span class="m1">welcome</span>
+								<span class="m2">to</span>
+								<span class="m3">the</span>
+								<span class="m4">seven</span>
+							</div>
+							<p class="m5"><img src="Image/The_Seven_big.png" width="500" hight="214" style="border-style:none" /></p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="navigation">
+			<table width="900" align="center" cellpadding="6" cellspacing="0" border="0">
+				<tr align="center">
+					<td>
+					</td>
+
+					<td>
+						<a href="index.htm"><img src="Image/HomeF.png" width="110" hight="111" style="border-style:none" /></a>
+					</td>
+					<td>
+						<a href="general.htm#navigation"><img src="Image/General.png" width="110" hight="111" style="border-style:none" /></a>
+					</td>
+
+					<td>
+						<a href="schedule.htm#navigation"><img src="Image/Schedule.png" width="110" hight="111" style="border-style:none" /></a>
+					</td>
+
+					<td>
+						<a href="index.htm"><img src="Image/Logo.png" width="139" hight="139" style="border-style:none" /></a>
+					</td>
+
+					<td>
+						<a href="institute.htm#navigation"><img src="Image/Institute.png" width="110" hight="111" style="border-style:none" /></a>
+					</td>
+
+					<td>
+						<a href="support.htm#navigation"><img src="Image/Support.png" width="110" hight="111" style="border-style:none" /></a>
+					</td>
+
+					<td>
+						<a href="about.htm#navigation"><img src="Image/About.png" width="110" hight="111" style="border-style:none" /></a>
+					</td>
+					<td>
+					</td>
+				</tr>
+
+				<tr>
+					<td height="130" colspan="9">
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="9">
+						<img src="Image/Streets_of_Venice.png" width="960" hight="540" style="border-style:none" />
+					</td>
+				</tr>
+
+				<tr>
+					<td height="110" colspan="9">
+					</td>
+				</tr>
+
+
+				<tr>
+					<td colspan="9">
+						<table border="0" width="956">
+							<tr>
+								<td width="20">
+								</td>
+
+
+								<td colspan="3" width="300">
+									<img src="Image/w_i_a.png" width="153" hight="19" style="border-style:none" />
+								</td>
+
+								<td width="30">
+								</td>
+
+								<td colspan="3" width="300">
+									<img src="Image/News.png" width="65" hight="18" style="border-style:none" />
+								</td>
+								<td width="30">
+								</td>
+							</tr>
+
+							<tr>
+								<td width="30">
+								</td>
+								<td width="280" colspan="3">
+									<p>
+										Imagine asking artists, already known for their beyond-the-boundary imaginations, to create something new and cutting-edge, something that takes them out of their comfort zone and into a new dimension of their art. Well that's exactly what the 200+ artists is trying to do. Imagine This. And if it has viewers scratching their heads and asking that enduring question, "What Is Art?" -narrative pieces will accompany the work. If you've ever wondered what an artist was thinking, this might be your opportunity to gain some insight.
+									</p>
+								</td>
+
+								<td width="30">
+								</td>
+
+								<td width="300" colspan="3">
+									<p>
+										We are now accepting spring 2017 Applications. Reserve your spot early
+									</p>
+
+									<p>
+										Spring 2017—Memorial Day weekend<br>
+										May 27, 28, 29 and June3, 4<br>
+										Fall 2017—Labor Day Weekend<br>
+										Sept. 2,3,4, and Sept. 9,10<br>
+									</p>
+
+									<p>
+										Interested in exhibiting with us? Learn More.
+										Want see who exhibited at the 2016 fall show guide? Download the guide Now.
+										Meet the rest of our fall 2016 winner featured on our new winners’ circle page in the photo gallery or click here.
+									</p>
+									<p>
+										Congratulations to all winning Artists!
+									</p>
+								</td>
+
+								<td width="30">
+								</td>
+							</tr>
+						</table>
+
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+		<div class="middle">
+			<img src="Image/39days.png" width="598" hight="307" style="border-style:none" />
+		</div>
+
+		<div class="first_text">
+
+			<table>
+				<tr>
+					<td align="center" width="350">
+						<p>
+							In our American show, 269 leading galleries from North America, Latin America, Europe, Asia and Africa show significant works from the masters of Modern and contemporary art, as well the new generation of emerging stars. Paintings, sculptures, installations, photographs, films, and editioned works of the highest quality are on display in the main exhibition hall. Ambitious large‐scale artworks, films and performances become part of the city's outdoor landscape at nearby Collins Park and SoundScape Park.
+						</p>
+
+					</td>
+				</tr>
+
+			</div>
+		</table>
+	</td>
+</tr>
+
+</div>
+
+<div class="bottom">
+	<table>
+		<tr>
+			<td>
+				<img src="Image/Bottom_part.png" width="960" hight="267" style="border-style:none" />
+
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+</body>
+</html>
